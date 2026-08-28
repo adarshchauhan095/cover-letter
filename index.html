@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adarsh Chauhan — Cover Letter, Senior Flutter Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F7F5EF;
+    --ink:#16202A;
+    --ink-soft:#3D4854;
+    --tab:#16202A;
+    --tab-text:#EDE7D8;
+    --accent:#2A5C8A;
+    --accent-soft:#DCE7EF;
+    --hairline:#DAD5C7;
+    --mono: 'IBM Plex Mono', monospace;
+    --serif: 'Source Serif 4', serif;
+    --sans: 'Inter', sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:#EEEAE0;
+    font-family:var(--sans);
+    color:var(--ink);
+    min-height:100vh;
+    display:flex;
+    align-items:flex-start;
+    justify-content:center;
+    padding:48px 20px 80px;
+  }
+
+  .toolbar{
+    position:fixed;
+    top:20px;
+    right:20px;
+    display:flex;
+    gap:8px;
+    z-index:20;
+  }
+  .toolbar button{
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:.04em;
+    text-transform:uppercase;
+    background:var(--ink);
+    color:var(--tab-text);
+    border:none;
+    padding:10px 14px;
+    border-radius:3px;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    gap:6px;
+    transition:background .15s ease, transform .1s ease;
+  }
+  .toolbar button:hover{background:var(--accent);}
+  .toolbar button:active{transform:translateY(1px);}
+  .toolbar button:focus-visible{outline:2px solid var(--accent); outline-offset:2px;}
+
+  .sheet{
+    position:relative;
+    display:flex;
+    max-width:900px;
+    width:100%;
+    background:var(--paper);
+    box-shadow:0 30px 60px -20px rgba(22,32,42,.35), 0 2px 0 rgba(22,32,42,.06);
+    border-radius:4px;
+    overflow:hidden;
+  }
+
+  /* side tab */
+  .tab{
+    flex:0 0 76px;
+    background:var(--tab);
+    color:var(--tab-text);
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:space-between;
+    padding:28px 0;
+  }
+  .tab .rotated{
+    writing-mode:vertical-rl;
+    transform:rotate(180deg);
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--tab-text);
+    opacity:.85;
+  }
+  .tab .stack{
+    writing-mode:vertical-rl;
+    transform:rotate(180deg);
+    font-family:var(--mono);
+    font-size:10px;
+    letter-spacing:.08em;
+    color:#9FB4C4;
+    line-height:1.9;
+  }
+  .tab .monogram{
+    width:38px;
+    height:38px;
+    border:1px solid #3A4B5C;
+    border-radius:2px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:var(--serif);
+    font-size:15px;
+    color:var(--tab-text);
+  }
+
+  .content{
+    flex:1;
+    padding:52px 56px 56px;
+    min-width:0;
+  }
+
+  .letterhead{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    flex-wrap:wrap;
+    gap:16px;
+    border-bottom:1px solid var(--hairline);
+    padding-bottom:22px;
+    margin-bottom:26px;
+  }
+  .name{
+    font-family:var(--serif);
+    font-weight:700;
+    font-size:32px;
+    letter-spacing:-.01em;
+    color:var(--ink);
+    margin:0;
+  }
+  .role{
+    font-family:var(--sans);
+    font-size:14px;
+    color:var(--accent);
+    font-weight:600;
+    margin-top:4px;
+    letter-spacing:.02em;
+  }
+  .contact{
+    font-family:var(--mono);
+    font-size:11.5px;
+    color:var(--ink-soft);
+    text-align:right;
+    line-height:1.8;
+  }
+  .contact a{color:var(--ink-soft); text-decoration:none; border-bottom:1px solid var(--hairline);}
+  .contact a:hover{color:var(--accent); border-color:var(--accent);}
+
+  .meta-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:10px;
+    font-family:var(--mono);
+    font-size:11.5px;
+    color:var(--ink-soft);
+    margin-bottom:28px;
+  }
+  .meta-row .pill{
+    background:var(--accent-soft);
+    color:var(--accent);
+    padding:3px 9px;
+    border-radius:20px;
+    font-size:11px;
+  }
+
+  .body-copy p{
+    font-family:var(--sans);
+    font-size:15px;
+    line-height:1.75;
+    color:var(--ink);
+    margin:0 0 18px;
+  }
+  .body-copy p.salutation{margin-bottom:20px;}
+  .body-copy strong{color:var(--ink); font-weight:600;}
+
+  .sign-off{
+    margin-top:8px;
+  }
+  .sign-off p{margin:0;}
+  .sign-off .sincerely{margin-bottom:34px;}
+  .sign-off .sig-name{
+    font-family:var(--serif);
+    font-size:20px;
+    font-weight:600;
+    color:var(--ink);
+  }
+  .sign-off .sig-role{
+    font-family:var(--mono);
+    font-size:11.5px;
+    color:var(--ink-soft);
+    margin-top:4px;
+  }
+
+  footer.note{
+    max-width:900px;
+    width:100%;
+    text-align:center;
+    font-family:var(--mono);
+    font-size:11px;
+    color:#8B8577;
+    margin-top:18px;
+  }
+  footer.note a{color:#8B8577;}
+
+  @media (max-width:720px){
+    body{padding:80px 12px 60px;}
+    .sheet{flex-direction:column;}
+    .tab{
+      flex-direction:row;
+      width:100%;
+      padding:14px 20px;
+      justify-content:space-between;
+      align-items:center;
+    }
+    .tab .rotated{
+      writing-mode:horizontal-tb;
+      transform:none;
+      font-size:10px;
+      letter-spacing:.1em;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .tab .stack{display:none;}
+    .content{padding:32px 24px 40px;}
+    .name{font-size:26px;}
+    .contact{text-align:left;}
+    .letterhead{flex-direction:column; align-items:flex-start;}
+  }
+
+  @media print{
+    body{background:#fff; padding:0; display:block;}
+    .toolbar{display:none;}
+    .sheet{box-shadow:none; max-width:100%; border-radius:0;}
+    .tab{background:#fff !important; color:#000; flex:0 0 54px;}
+    .tab .rotated{color:#000;}
+    .tab .stack{color:#444;}
+    .tab .monogram{border-color:#999; color:#000;}
+    footer.note{display:none;}
+  }
+</style>
+</head>
+<body>
+
+  <div class="toolbar">
+    <button id="copyBtn">Copy text</button>
+    <button id="printBtn">Save as PDF</button>
+  </div>
+
+  <div class="sheet">
+    <aside class="tab">
+      <div class="monogram">AC</div>
+      <div class="rotated">Cover Letter</div>
+      <div class="stack">FLUTTER · DART · GETX · BLOC · REST · KYC · C++17</div>
+    </aside>
+
+    <main class="content" id="letterContent">
+      <div class="letterhead">
+        <div>
+          <p class="name">Adarsh Chauhan</p>
+          <p class="role">Senior Flutter Developer / Software Engineer</p>
+        </div>
+        <div class="contact">
+          Karnal, Haryana, India<br>
+          <a href="tel:+917015027886">+91 7015027886</a><br>
+          <a href="mailto:akchauhan095@gmail.com">akchauhan095@gmail.com</a><br>
+          <a href="http://linkedin.com/in/adarsh-chauhan095" target="_blank" rel="noopener">linkedin.com/in/adarsh-chauhan095</a>
+        </div>
+      </div>
+
+      <div class="meta-row">
+        <span>Application — Senior Flutter Developer / Software Engineer</span>
+        <span class="pill">5+ yrs experience</span>
+      </div>
+
+      <div class="body-copy">
+        <p class="salutation">Dear Hiring Manager,</p>
+
+        <p>I am writing to apply for the Senior Flutter Developer / Software Engineer position. I have 5+ years of experience building and maintaining production Flutter applications across FinTech, digital lending, banking, OTT streaming, and fitness products, and I believe my background in mobile architecture and cross-platform engineering would be a strong fit for your team.</p>
+
+        <p>At HashStudioz Technologies, I architected a configurable form-rendering engine for the Biz2X digital lending platform, allowing new loan-application fields to launch from backend configuration alone, without a new app release. I also built a reusable FinTech and KYC library covering Aadhaar, PAN, selfie, address, and CIBIL verification, now shared across multiple company applications.</p>
+
+        <p>I have contributed to YES PAY Biz, a merchant payments application, working on REST API integration, transaction workflows, and cross-platform stability for Android and iOS. I also worked on Alright! TV, a publicly distributed OTT streaming app that has surpassed 1 million downloads on Google Play, building content discovery, subscription, and entitlement features.</p>
+
+        <p>My technical background includes Flutter, Dart, GetX, BLoC, Clean Architecture, REST APIs, Firebase, SQLite, Git, CI/CD, Android NDK, Dart FFI, and native C++17 development. Outside of FinTech work, I built Adaptive Sound Desync, a real-time audio-DSP framework combining Flutter with a native C++17/Android NDK engine, including five signal-processing modules and native tests validating 48kHz floating-point PCM audio.</p>
+
+        <p>I am looking for a role where I can continue building scalable Flutter applications, contribute to complex product architecture, and grow as a senior engineer. I would welcome the opportunity to discuss how my experience could support your engineering team.</p>
+
+        <p>Thank you for your time and consideration.</p>
+      </div>
+
+      <div class="sign-off">
+        <p class="sincerely">Sincerely,</p>
+        <p class="sig-name">Adarsh Chauhan</p>
+        <p class="sig-role">Senior Software Engineer | Flutter Developer</p>
+      </div>
+    </main>
+  </div>
+
+  <footer class="note">This page is a shareable, ATS-friendly cover letter — use “Save as PDF” for uploads, or send the URL directly.</footer>
+
+<script>
+  document.getElementById('printBtn').addEventListener('click', function(){
+    window.print();
+  });
+
+  document.getElementById('copyBtn').addEventListener('click', function(){
+    var el = document.getElementById('letterContent');
+    var text = el.innerText;
+    navigator.clipboard.writeText(text).then(function(){
+      var btn = document.getElementById('copyBtn');
+      var original = btn.textContent;
+      btn.textContent = 'Copied!';
+      setTimeout(function(){ btn.textContent = original; }, 1600);
+    });
+  });
+</script>
+
+</body>
+</html>
